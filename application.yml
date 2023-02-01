@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: emily-argo-application
+spec:
+  project: default
+
+  source:
+    repoURL: https://github.com/emilyl14/test.git
+    targetRevision: HEAD
+    path: main
+  destination: 
+    server: https://kubernetes.default.svc
+    namespace: emily
+
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
+
+    automated:
+      selfHeal: true
+      prune: true
