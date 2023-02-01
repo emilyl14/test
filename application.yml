@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/emilyl14/test.git
     targetRevision: HEAD
-    path: main
+    path: developement
   destination: 
     server: https://kubernetes.default.svc
     namespace: emily
